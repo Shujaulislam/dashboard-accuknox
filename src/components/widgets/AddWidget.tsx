@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Checkbox } from '@/components/ui/checkbox'
 import { Plus } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useWidgetStore } from '@/lib/store/widget-store'
 
 interface WidgetOption {
   id: string
@@ -71,8 +72,19 @@ export function AddWidget({ categoryId }: AddWidgetProps) {
     setSelectedWidgets(newSelected)
   }
 
+  const addWidget = useWidgetStore((state) => state.addWidget)
+
   const handleConfirm = () => {
-    // Here we'll implement the actual widget addition logic
+    selectedWidgets.forEach(widgetId => {
+      const widget = widgetOptions.find(w => w.id === widgetId)
+      if (widget) {
+        addWidget(categoryId, {
+          name: widget.name,
+          content: widget.description || '',
+          type: widget.category
+        })
+      }
+    })
     setIsOpen(false)
     setSelectedWidgets(new Set())
   }

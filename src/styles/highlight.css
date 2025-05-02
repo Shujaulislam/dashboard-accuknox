@@ -1,0 +1,12 @@
+@keyframes highlight {
+  0% {
+    background-color: rgba(var(--primary) / 0.1);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.highlight {
+  animation: highlight 2s ease-out;
+}

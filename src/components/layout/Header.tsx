@@ -12,7 +12,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <h1 className="text-xl font-semibold">CNAPP Dashboard</h1>
-            <span className="text-sm text-muted-foreground">Dashboard v2</span>
+            <span className="text-sm text-muted-foreground">Dashboard</span>
           </div>
           <div className="flex items-center space-x-4">
             <SearchWidgets />
@@ -25,7 +25,7 @@ export function Header() {
           <div className="flex items-center text-sm">
             <a href="#" className="text-muted-foreground hover:text-foreground">Home</a>
             <ChevronRight className="w-4 h-4 mx-2 text-muted-foreground" />
-            <span className="font-medium">Dashboard v2</span>
+            <span className="font-medium">Dashboard</span>
           </div>
           <select 
             className="text-sm border rounded-md px-3 py-1.5 bg-background hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary"

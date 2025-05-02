@@ -18,16 +18,29 @@ export function CategoryList() {
       return acc
     }, {} as {[key: string]: boolean})
     setSelectedWidgets(initialSelected)
+
+    return () => {
+      setSelectedWidgets({})
+    }
   }, [categories])
 
   const handleWidgetToggle = (widgetId: string, categoryId: string, checked: boolean) => {
-    setSelectedWidgets(prev => ({
-      ...prev,
-      [widgetId]: checked
-    }))
+    try {
+      setSelectedWidgets(prev => ({
+        ...prev,
+        [widgetId]: checked
+      }))
 
-    if (!checked) {
-      removeWidget(categoryId, widgetId)
+      if (!checked) {
+        removeWidget(categoryId, widgetId)
+      }
+    } catch (error) {
+      console.error('Failed to toggle widget:', error)
+      // Revert the checkbox state on error
+      setSelectedWidgets(prev => ({
+        ...prev,
+        [widgetId]: !checked
+      }))
     }
   }
 

@@ -54,7 +54,7 @@ export const useWidgetStore = create<WidgetStore>((set, get) => ({
     }
   ],
   
-  addWidget: (categoryId, widget) => {
+  addWidget: (categoryId: string, widget: Omit<Widget, 'id'>) => {
     set((state) => ({
       categories: state.categories.map((category) => {
         if (category.id === categoryId) {

@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dynamic Dashboard Implementation - AccuKnox Assignment
 
-## Getting Started
+## Overview
+This project implements a dynamic dashboard with widget management functionality using Next.js, Zustand for state management, and ShadCN UI for components. The dashboard allows users to add, remove, and search widgets across different categories.
 
-First, run the development server:
+## Features
+- Dynamic widget management with category-based organization
+- Add/Remove widgets functionality
+- Widget search across all categories
+- Real-time chart visualization using Recharts
+- Responsive layout with ShadCN UI components
 
+## Live Demo
+The application is deployed on Vercel and can be accessed at: [Dashboard Demo](https://dashboard-accuknox.vercel.app)
+
+## Local Development Setup
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd dashboard-accuknox
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Implementation Details
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Tech Stack
+- **Frontend Framework**: Next.js
+- **State Management**: Zustand
+- **UI Components**: ShadCN UI
+- **Charts**: Recharts
+- **Styling**: Tailwind CSS
 
-## Learn More
+### Core Features Implementation
+1. **Widget Management**
+   - Category-based widget organization
+   - Add Widget dialog with category tabs
+   - Widget removal with cross icon
 
-To learn more about Next.js, take a look at the following resources:
+2. **Chart Components**
+   - Cloud Accounts (Donut Chart)
+   - Risk Assessment (Interactive Donut)
+   - Registry Scan (Bar Charts)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Search Functionality**
+   - Real-time widget search
+   - Results grouped by category
+   - Smooth scroll to widget location
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Assignment Requirements Met
+- [x] Dynamic JSON structure for dashboard/widget management
+- [x] Category-based widget organization
+- [x] Add/Remove widgets functionality
+- [x] Widget search implementation
+- [x] Modern UI with ShadCN components
+- [x] State management with Zustand

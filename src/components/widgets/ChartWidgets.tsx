@@ -16,7 +16,7 @@ export function CloudAccountsWidget() {
       <CardHeader>
         <CardTitle>Cloud Accounts</CardTitle>
       </CardHeader>
-      <CardContent className="flex justify-center">
+      <CardContent className="flex justify-center h-[200px] w-full">
         <DonutChart data={data} size={180} />
       </CardContent>
     </Card>

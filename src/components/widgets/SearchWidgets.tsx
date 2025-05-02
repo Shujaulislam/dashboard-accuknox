@@ -8,6 +8,7 @@ import { Widget } from '@/types/widget'
 
 interface SearchResult extends Widget {
   categoryName: string
+  categoryId: string
 }
 
 export function SearchWidgets() {
@@ -23,7 +24,8 @@ export function SearchWidgets() {
       )
       return {
         ...widget,
-        categoryName: category?.name || 'Unknown Category'
+        categoryName: category?.name || 'Unknown Category',
+        categoryId: category?.id || ''
       }
     })
   }, [query, searchWidgets, categories]) as SearchResult[]
@@ -43,6 +45,15 @@ export function SearchWidgets() {
             <div
               key={widget.id}
               className="rounded-sm px-2 py-1.5 text-sm hover:bg-accent cursor-pointer"
+              onClick={() => {
+                setQuery('')
+                const element = document.getElementById(`category-${widget.categoryId}`)
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' })
+                  element.classList.add('highlight')
+                  setTimeout(() => element.classList.remove('highlight'), 2000)
+                }
+              }}
             >
               <div className="font-medium">{widget.name}</div>
               <div className="text-xs text-muted-foreground">{widget.content}</div>

@@ -14,7 +14,7 @@ export default function DashboardPage() {
       <main className="container py-8 px-4">
         <div className="space-y-8">
           {categories.map((category) => (
-            <section key={category.id}>
+            <section key={category.id} id={`category-${category.id}`}>
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h2 className="text-2xl font-bold">{category.name}</h2>
@@ -36,10 +36,7 @@ export default function DashboardPage() {
                 ))}
                 {category.widgets.length === 0 && (
                   <div className="flex items-center justify-center h-full min-h-[300px] rounded-xl border border-dashed">
-                    <button className="flex flex-col items-center justify-center gap-2 p-4 text-muted-foreground hover:text-foreground transition-colors">
-                      <span className="text-lg">+</span>
-                      <span className="text-sm">Add Widget</span>
-                    </button>
+                    <AddWidget categoryId={category.id} />
                   </div>
                 )}
               </div>
